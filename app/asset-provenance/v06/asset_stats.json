@@ -1,0 +1,31 @@
+{
+  "collection_triangles": {
+    "Bodhi_Inspired_Tree": 484,
+    "Courtyard": 1996,
+    "Detailed_Bodhi_Foliage": 9504,
+    "Garden_Bench": 640,
+    "Garden_Understory": 3716,
+    "Lotus_Pond": 1368,
+    "Pond_Botanical_Detail": 7088,
+    "Roof_Tile_Detail": 51488,
+    "Scanned_Ferns_CC0": 6232,
+    "Scanned_Rocks_CC0": 8906,
+    "Stone_Paving": 8052,
+    "Thai_Pavilion": 3044,
+    "Timber_Craft": 8752
+  },
+  "total_triangles": 111270,
+  "original_architecture": true,
+  "third_party_cc0": [
+    "fern_02",
+    "rock_07",
+    "wood_table",
+    "stone_tiles_02"
+  ],
+  "footprint_m": [
+    16,
+    15
+  ],
+  "blender_up": "Z",
+  "gltf_up": "Y"
+}

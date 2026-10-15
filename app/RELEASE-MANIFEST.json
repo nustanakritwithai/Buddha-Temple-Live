@@ -1,22 +1,22 @@
 {
-  "version": "0.5.1",
+  "version": "0.6.0",
   "status": "approved publication artifact; see GitHub Actions for deployment outcome",
   "baseline": {
-    "filename": "buddha-temple-web-v0.5.1-baseline-v0.5.0.zip",
-    "sha256": "b211a81b9853a07ddd476fcbb4d73dd831605b1799ae6f7a45614fd91634dc5d"
+    "filename": "buddha-temple-web-v0.6.0-baseline-v0.5.1.zip",
+    "sha256": "0a4bc7a37e2ee7dac229252b41fd817a884bd1347c1af75b51fde5da0b165ce3"
   },
   "checks": {
     "typescript": "passed",
     "production_build": "passed",
     "repository_tests": {
-      "passed": 51,
+      "passed": 55,
       "failed": 0
     },
     "independent_review_tests": {
-      "passed": 24,
+      "passed": 28,
       "failed": 0
     },
-    "qa_report_sha256": "2006c9181b7aabf8e732c77f6adf71623c803bc6a5ccf1ff459511dc9dd12f7e",
+    "qa_report_sha256": "767fc4dee9142a8934c175bd260d8b7f023a90233323f7f47e8af46945303dd3",
     "browser_runtime": "UNKNOWN - not run",
     "physical_android_ios": "UNKNOWN - not run"
   },
@@ -28,18 +28,23 @@
     "No automatic popups, history, levels or practice gating",
     "First person only, removed toggle and cleared engine camera inputs",
     "Pointerdown-locked left movement / right look with floating joystick",
-    "Independent multitouch release and quiet/modal/Realm controls regression coverage"
+    "Independent multitouch release and quiet/modal/Realm controls regression coverage",
+    "Approved V0.6 environment with embedded PBR/CC0 provenance",
+    "Measured floor/cushion/bench supports, rail/column/table/bed proxies and safe watering point",
+    "Original scene retained inactive for rollback; existing NPC character art unchanged"
   ],
   "known_gaps": [
     "Actual sign readability, mesh picking and mobile UI unverified",
     "Bundled entry JS remains large",
-    "LLM conversation, authoritative server schedules/persistence and licensed teaching audio not connected"
+    "LLM conversation, authoritative server schedules/persistence and licensed teaching audio not connected",
+    "11.54 MB scene and 111270 triangles require real-device performance checks",
+    "Authored conservative collisions and smooth stair ramp are not a generated navmesh"
   ],
   "dist_files": [
     {
       "path": "assets/LICENSE.txt",
-      "bytes": 561,
-      "sha256": "abe3072502e53bf8844418679c7433c71cb9efc9735dc05b80ee9d13c80e0686"
+      "bytes": 2162,
+      "sha256": "e790ac9a4aae2dd334cf681da748d0a7845855a401477f3a771f61d86f832b62"
     },
     {
       "path": "assets/ai_gardener_npc.glb",
@@ -52,9 +57,9 @@
       "sha256": "27de2528909bebbc9fd8664c8da38d3324abdcd6173d7c9e6371703191b18f6d"
     },
     {
-      "path": "assets/index-CVLuodOo.js",
-      "bytes": 3117606,
-      "sha256": "13a594d26a9b8a0efd51934aba69d8b9654fc6acde2388c7116e4f1a69ea97b5"
+      "path": "assets/index-D5uQlQ5G.js",
+      "bytes": 3118283,
+      "sha256": "91345afa6c1c5293912e4beacf8d87c94539fe946e384afa209576bded83d738"
     },
     {
       "path": "assets/living_temple_scene.glb",
@@ -62,14 +67,30 @@
       "sha256": "99f555f427eacd64f430fdbf6641f32f59728fddc5967e4634f48e00aae54e53"
     },
     {
+      "path": "assets/temple_quality_v06.glb",
+      "bytes": 11540600,
+      "sha256": "f5def35adcd1c77aa2bf9524c8101435b4ddf929861e686fbb28d41a3adaaf7f"
+    },
+    {
       "path": "index.html",
       "bytes": 705,
-      "sha256": "e0b327cef1d382222325790874de4fb82042d879455b62ea4867f833fc7ab854"
+      "sha256": "d2df2aed1e0d509891dfa0a9e802b486f8e3d1184dd5e3f0af9d95f88a229184"
     },
     {
       "path": "realm/infinite-stillness.html",
       "bytes": 59024,
       "sha256": "f105999302f7f4abf05cf533aa13728486cc82afd2076c0bf2938aaf84f68293"
     }
-  ]
+  ],
+  "environment": {
+    "file": "assets/temple_quality_v06.glb",
+    "bytes": 11540600,
+    "sha256": "f5def35adcd1c77aa2bf9524c8101435b4ddf929861e686fbb28d41a3adaaf7f",
+    "triangles": 111270,
+    "nodes": 13,
+    "material_primitives": 47,
+    "materials": 25,
+    "embedded_images": 12,
+    "max_texture_dimension": 1024
+  }
 }

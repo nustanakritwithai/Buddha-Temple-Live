@@ -1,6 +1,6 @@
-# สัปปายะวัด · AI Living Temple v0.5.1
+# สัปปายะวัด · AI Living Temple v0.6.0
 
-Thai-language browser-only courtyard prototype, extending the original real GLB scene. This candidate adds first-person-only view, mobile input hardening, geometry-aligned seating and a compact HUD while preserving the eight GDD areas, cited learning content and rest/practice separation. It connects the user's existing Infinite Stillness prototype through a local sandboxed iframe. No server, authentication, multiplayer or offline world is connected.
+Thai-language browser-only courtyard prototype, using the approved higher-detail V0.6 GLB environment. This candidate adds first-person-only view, mobile input hardening, geometry-aligned seating and a compact HUD while preserving the eight GDD areas, cited learning content and rest/practice separation. It connects the user's existing Infinite Stillness prototype through a local sandboxed iframe. No server, authentication, multiplayer or offline world is connected.
 
 ## Run and build
 
@@ -15,13 +15,13 @@ npm run build
 npm run preview -- --host 127.0.0.1
 ```
 
-Use `npm ci --cache /tmp/temple-npm-cache` if the default cache directory is unavailable. Exact dependencies are pinned in the lockfile. Vite 8 uses `build.rolldownOptions.output.codeSplitting: false`; deployment consists of HTML, one JS bundle, CSS, two GLBs, asset license and the standalone Realm HTML. Preserve the `/Buddha-Temple-Live/` base. A publishing worker owns root/docs layout and the existing Pages workflow; this source package does not deploy itself.
+Use `npm ci --cache /tmp/temple-npm-cache` if the default cache directory is unavailable. Exact dependencies are pinned in the lockfile. Vite 8 uses `build.rolldownOptions.output.codeSplitting: false`; deployment consists of HTML, one JS bundle, CSS, three GLBs (including the inactive rollback scene), asset license and the standalone Realm HTML. Preserve the `/Buddha-Temple-Live/` base. A publishing worker owns root/docs layout and the existing Pages workflow; this source package does not deploy itself.
 
 ## Eight actual areas
 
 - Z01 entrance: optional welcome-guide text, learning and honest schedule availability.
 - Z02 central path: opt-in slow walking practice along an actual bounded path.
-- Z03 pavilion: accessible central stairs/floor, three selectable cushion coordinates, sitting practice and opt-in Infinite Stillness.
+- Z03 pavilion: accessible central stairs/floor, three selectable cushion coordinates (0.945 m tops), sitting practice and opt-in Infinite Stillness.
 - Z04 tree: untimed rest and reading.
 - Z05 pond: optional fixed-camera observation practice and removing one simulated floating leaf.
 - Z06 garden: local watering/moist-soil effect and removing simulated fallen leaves.
@@ -67,13 +67,13 @@ This is integration code with deterministic protocol coverage, NOT a verified de
 
 ## Validation and outstanding scope
 
-Typecheck, production build and unit-test results are recorded in the release manifest. No manual browser gate was run for this increment, following the user's request to keep developing. Runtime, visual fidelity, touch usability and physical Android/iOS performance remain UNKNOWN. No FPS claim or production readiness claim is made. Six original static files become seven with the actual standalone Realm HTML.
+Typecheck, production build and unit-test results are recorded in the release manifest. No manual browser gate was run for this increment, following the user's request to keep developing. Runtime, visual fidelity, touch usability and physical Android/iOS performance remain UNKNOWN. No FPS claim or production readiness claim is made. The runtime distribution now has eight files, including the standalone Realm, the new environment and the original environment retained for rollback.
 
 Future work: real-device acceptance and collision/camera tuning, authorized chant/audio assets and review, authoritative server scheduling/persistence, authentication and admin controls. Those server features need suitable resources and separate implementation; the overloaded VPS has not been touched.
 
 ## Licenses and provenance
 
-Original procedural GLB geometry/materials: `public/assets/LICENSE.txt`. Babylon.js Apache-2.0, Vite MIT, TypeScript Apache-2.0, Playwright Apache-2.0. No third-party downloaded models, fonts or audio. The Realm originated from the user's existing model-generated Library artifact; no third-party runtime/assets were found in its inspected source. Learning summaries are newly written paraphrases with linked sources, not republished translations. No new outbound repository code license or exclusivity claim is made on the owner's behalf.
+Original procedural GLB geometry/materials: `public/assets/LICENSE.txt`. Babylon.js Apache-2.0, Vite MIT, TypeScript Apache-2.0, Playwright Apache-2.0. V0.6 includes four Poly Haven CC0 source assets/materials; see asset-provenance/v06/THIRD_PARTY.md and source-manifests.json. No downloaded fonts or audio. The Realm originated from the user's existing model-generated Library artifact; no third-party runtime/assets were found in its inspected source. Learning summaries are newly written paraphrases with linked sources, not republished translations. No new outbound repository code license or exclusivity claim is made on the owner's behalf.
 
 ## V0.4 candidate controls and validation boundaries
 
@@ -100,3 +100,13 @@ New modules: `learning-stations.ts` (authored mapping/branches), `discovery.ts` 
 ## V0.5.1 control correction
 
 First person is the only active view. The former toggle is removed; legacy third-person preferences are ignored and the guarded settings rewrite removes stale fields. No camera engine inputs are attached. Each pointer owns movement or look from touchdown, supports simultaneous fingers, and releases independently; blur, hidden tabs, dialogs, resize and practice policy changes clear captures. Left movement is disabled while seated; practice right look requires the existing opt-in. Runtime/physical-mobile behavior remains unverified.
+
+## V0.6 environment integration
+
+The approved `temple_quality_v06.glb` replaces the active environment. The original scene GLB is retained, unmodified, for rollback and is not loaded by this release. The new asset is 11,540,600 bytes, 111,270 triangles, 13 merged nodes, 47 material primitives, 25 materials and 12 embedded images at most 1024². It has no external texture URLs or animation. The gardener and scripted welcome helper retain their earlier prototype appearance; this release does not upgrade character art.
+
+Lighting uses moderate hemispheric/directional lights and tone mapping, preserving imported PBR materials and fern alpha cutout. Only major architectural/tree-trunk/bench/rock meshes cast dynamic shadows, avoiding rendering all decorative foliage into the shadow map. No external environment map is fetched. Exact visual results and mobile performance remain UNKNOWN.
+
+Collision proxies now account for side/rear rails, six column feet, the tea table and four wider garden beds. Central stairs use a smooth support ramp, with .7085 m pavilion tile tops, .945 m cushion tops, unchanged .765 m bench seats, .159 m path and .18 m cross-paving. The two tiny scanned rocks are treated as walk-over decorative pebbles. Watering moves to (−4.8, 5.8), outside the larger bed. Stations retain their approach coordinates, and all cushion/bench exits remain explicit. These are conservative authored proxies, not triangle-mesh collision or a generated navmesh.
+
+CC0 provider URLs, authors, modifications and source hashes are carried under `asset-provenance/v06/` and the shipped asset license. The editable packed Blender/rebuild/source asset pack remains a separate deliverable; it is not downloaded by browsers. Source ZIP includes both environment GLBs and rollback baseline identity. The 11.54 MB environment and ~3.12 MB JS bundle warrant real low-end-device testing before production claims.

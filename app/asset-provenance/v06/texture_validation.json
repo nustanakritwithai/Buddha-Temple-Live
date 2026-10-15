@@ -1,0 +1,122 @@
+{
+  "images": [
+    {
+      "name": "wood_table_nor_gl_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 108526,
+      "format": "JPEG"
+    },
+    {
+      "name": "wood_table_diff_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 259328,
+      "format": "JPEG"
+    },
+    {
+      "name": "wood_table_arm_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 936192,
+      "format": "PNG"
+    },
+    {
+      "name": "stone_tiles_02_nor_gl_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 182271,
+      "format": "JPEG"
+    },
+    {
+      "name": "stone_tiles_02_diff_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 204832,
+      "format": "JPEG"
+    },
+    {
+      "name": "stone_tiles_02_arm_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 859287,
+      "format": "PNG"
+    },
+    {
+      "name": "fern_02_nor_gl_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 81406,
+      "format": "JPEG"
+    },
+    {
+      "name": "fern_rgba_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1137729,
+      "format": "PNG"
+    },
+    {
+      "name": "fern_02_arm_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 77103,
+      "format": "JPEG"
+    },
+    {
+      "name": "rock_07_nor_gl_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 183803,
+      "format": "JPEG"
+    },
+    {
+      "name": "rock_07_diff_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 159368,
+      "format": "JPEG"
+    },
+    {
+      "name": "rock_07_arm_1k",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 64084,
+      "format": "JPEG"
+    }
+  ],
+  "all_images_max_1024": true,
+  "materials": 25,
+  "material_primitives": 47,
+  "fern_alpha_cutout": [
+    {
+      "name": "fern_02",
+      "mode": "MASK",
+      "cutoff": 0.45
+    }
+  ]
+}

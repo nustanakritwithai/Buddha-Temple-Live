@@ -1,0 +1,195 @@
+{
+  "stone_tiles_02": {
+    "id": "stone_tiles_02",
+    "name": "Stone Tiles 02",
+    "kind": "texture",
+    "source": "https://polyhaven.com/a/stone_tiles_02",
+    "authors": {
+      "Charlotte Baglioni": "All"
+    },
+    "license": "CC0-1.0",
+    "license_url": "https://polyhaven.com/license",
+    "resolution": "1k",
+    "source_polycount": null,
+    "download_bytes": 2314555,
+    "files": [
+      {
+        "path": "textures/stone_tiles_02_diff_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_tiles_02/stone_tiles_02_diff_1k.jpg",
+        "bytes": 817710,
+        "md5": "8d2ebfc3505efbb610aa5010d38d2df8",
+        "sha256": "687ef4a6cc07fb680352cf26b0a2a6256d4c18d8084dcd59ac739bc509296e18"
+      },
+      {
+        "path": "textures/stone_tiles_02_nor_gl_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_tiles_02/stone_tiles_02_nor_gl_1k.jpg",
+        "bytes": 873564,
+        "md5": "cca5bd87964b755cc85c01322e8d1a0e",
+        "sha256": "ab19cc9baacb0bc30a219f841254beb6837412ddad9bfc9c052b5aa805d1c3f0"
+      },
+      {
+        "path": "textures/stone_tiles_02_arm_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_tiles_02/stone_tiles_02_arm_1k.jpg",
+        "bytes": 623281,
+        "md5": "b7d6c503145f4b57cd6e4442739036f8",
+        "sha256": "5f19b8f986ec3fcabf29b125e225140066beb8f3bc687d62364968ac540514a9"
+      }
+    ],
+    "validation": "Every original file size and MD5 matches provider metadata; SHA256 retained. No runtime validation yet."
+  },
+  "wood_table": {
+    "id": "wood_table",
+    "name": "Wood Table",
+    "kind": "texture",
+    "source": "https://polyhaven.com/a/wood_table",
+    "authors": {
+      "Dimitrios Savva": "All"
+    },
+    "license": "CC0-1.0",
+    "license_url": "https://polyhaven.com/license",
+    "resolution": "1k",
+    "source_polycount": null,
+    "download_bytes": 2340536,
+    "files": [
+      {
+        "path": "textures/wood_table_diff_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_table/wood_table_diff_1k.jpg",
+        "bytes": 987969,
+        "md5": "45af5766b300f7e940ee8984c5fabd4f",
+        "sha256": "f81642ae141958feac6c5acac03e2aeb6cfe049dff301d0627e3c17f2dc5c7a5"
+      },
+      {
+        "path": "textures/wood_table_nor_gl_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_table/wood_table_nor_gl_1k.jpg",
+        "bytes": 625535,
+        "md5": "c4310c772339e00650ab23c36a2775f6",
+        "sha256": "88ecc8e54c30314f4662696ddf8c05b031976e3cbc68e399daa5ebddfb4cec71"
+      },
+      {
+        "path": "textures/wood_table_arm_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_table/wood_table_arm_1k.jpg",
+        "bytes": 727032,
+        "md5": "8b8022e4fc02e558d772e013d675a389",
+        "sha256": "54051d8c368e24a0c56eba165dc2de721295620cf7dcb3f19b39bb727ec7220c"
+      }
+    ],
+    "validation": "Every original file size and MD5 matches provider metadata; SHA256 retained. No runtime validation yet."
+  },
+  "rock_07": {
+    "id": "rock_07",
+    "name": "Rock 07",
+    "kind": "gltf",
+    "source": "https://polyhaven.com/a/rock_07",
+    "authors": {
+      "Jenelle van Heerden": "All"
+    },
+    "license": "CC0-1.0",
+    "license_url": "https://polyhaven.com/license",
+    "resolution": "1k",
+    "source_polycount": 27830,
+    "download_bytes": 2184088,
+    "files": [
+      {
+        "path": "rock_07_1k.gltf",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/rock_07/rock_07_1k.gltf",
+        "bytes": 2979,
+        "md5": "2bdb563c126a9d284e60e94951759e2f",
+        "sha256": "efcc2dcaa133ff8ad5c865dc2135772e8f5dbc83fa38db2ee2cf25382436b6e6"
+      },
+      {
+        "path": "rock_07.bin",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/rock_07/rock_07.bin",
+        "bytes": 468936,
+        "md5": "817b2cfd1626cb06f18a825f87f58ec3",
+        "sha256": "e4a532a6d6cf4a08c288f501b790f32cba0528136a29959ce774c3cd39369e7e"
+      },
+      {
+        "path": "textures/rock_07_arm_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_07/rock_07_arm_1k.jpg",
+        "bytes": 309735,
+        "md5": "530bfd2a510fe6f778bb1198a2395574",
+        "sha256": "1ed76e9a8542c76bdc6b7b018720ae1f52cd75d9f5ae719f613de3f5032cf4da"
+      },
+      {
+        "path": "textures/rock_07_diff_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_07/rock_07_diff_1k.jpg",
+        "bytes": 635452,
+        "md5": "b68ac1824bb3bd3867641b830ad02099",
+        "sha256": "8ff1965aa1664cc4abcc0131c44ee2b97ab14d6e131d7a51429ff261eeb101c8"
+      },
+      {
+        "path": "textures/rock_07_nor_gl_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_07/rock_07_nor_gl_1k.jpg",
+        "bytes": 766986,
+        "md5": "d3a2a0df0db0177c4df8ef644b003652",
+        "sha256": "57cb2210951aeb376164fce5f7c65f03e5599def04873b56cad0f173c275d78d"
+      }
+    ],
+    "validation": "Every original file size and MD5 matches provider metadata; SHA256 retained. No runtime validation yet.",
+    "actual_gltf_triangles": 14844,
+    "actual_gltf_meshes": 1
+  },
+  "fern_02": {
+    "id": "fern_02",
+    "name": "Fern 02",
+    "kind": "gltf",
+    "source": "https://polyhaven.com/a/fern_02",
+    "authors": {
+      "Rob Tuytel": "scanning",
+      "Rico Cilliers": "modeling"
+    },
+    "license": "CC0-1.0",
+    "license_url": "https://polyhaven.com/license",
+    "resolution": "1k",
+    "source_polycount": 6232,
+    "download_bytes": 1260950,
+    "files": [
+      {
+        "path": "fern_02_1k.gltf",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/fern_02/fern_02_1k.gltf",
+        "bytes": 6899,
+        "md5": "cf276874d37bfb73c299504a6b355b77",
+        "sha256": "33974295ee19670af4877705fc7d91f33f42d6302f0d44a625e072271223031f"
+      },
+      {
+        "path": "textures/fern_02_arm_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fern_02/fern_02_arm_1k.jpg",
+        "bytes": 280359,
+        "md5": "1bbb2b22951f450720d28e17d93a2987",
+        "sha256": "ebfb5d76ce9cbdaec20bcd22dce9b755f0b1b8650ef29ca13555e3e6961025d7"
+      },
+      {
+        "path": "textures/fern_02_diff_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fern_02/fern_02_diff_1k.jpg",
+        "bytes": 315705,
+        "md5": "82c18a6cfd5ae91c37c0e078f591181c",
+        "sha256": "a828a6e7b4c01c826911e2eac4b3afc7457dab7b3b392a31c681ed88b7d50029"
+      },
+      {
+        "path": "textures/fern_02_nor_gl_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fern_02/fern_02_nor_gl_1k.jpg",
+        "bytes": 367222,
+        "md5": "43aed63dff79554f6064627515afd9d7",
+        "sha256": "45bce132c6e96a0864bc89ab5da51361ab3f4afa83a6669ae499ab5ca811f621"
+      },
+      {
+        "path": "fern_02.bin",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/fern_02/fern_02.bin",
+        "bytes": 176176,
+        "md5": "c061e9255f7d36ae9ce0e92ef3e100b2",
+        "sha256": "fe1abb762bcbbc7ad9e86925c8080437a62add257d9280e9142fdc85c226e64c"
+      },
+      {
+        "path": "textures/fern_02_alpha_1k.png",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/fern_02/fern_02_alpha_1k.png",
+        "bytes": 114589,
+        "md5": "1421e5e36946c23a7ddcc907de89025c",
+        "sha256": "ea3c64284c7ebdeedf484d2d816eae92825ec526140c3bb83859ddc7a64001f9"
+      }
+    ],
+    "validation": "Every original file size and MD5 matches provider metadata; SHA256 retained. No runtime validation yet.",
+    "actual_gltf_triangles": 6232,
+    "actual_gltf_meshes": 4,
+    "integration_warning": "Provider glTF base color is JPEG, so alphaMode MASK has no image alpha. Merge separate alpha PNG into diffuse or wire it in Blender before export."
+  }
+}

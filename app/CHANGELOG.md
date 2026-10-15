@@ -1,5 +1,13 @@
 # Changes
 
+## 0.6.0 candidate
+
+- Integrate approved higher-detail environment with embedded CC0 PBR textures and provenance.
+- Align raised cushion/floor surfaces, rail/post/table/bed collision proxies and watering location.
+- Preserve first-person-only split-half input, learning stations, benches and Realm return.
+- Retain original scene for rollback; character art remains the existing prototype.
+- Runtime and physical-device performance remain unverified.
+
 ## 0.5.1 candidate
 
 - Enforce first-person-only view and remove the view toggle.

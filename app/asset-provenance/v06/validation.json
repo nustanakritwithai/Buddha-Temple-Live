@@ -1,0 +1,29 @@
+{
+  "temple_quality_v06.glb": {
+    "bytes": 11540600,
+    "glb_container_valid": true,
+    "blender_reimport_success": true,
+    "triangles": 111270,
+    "mesh_nodes": 13,
+    "material_primitives": 47,
+    "materials": 25,
+    "animations": 0,
+    "bounds_blender_Z_up_m": [
+      [
+        -8.0,
+        -7.5,
+        -0.7300000190734863
+      ],
+      [
+        8.0,
+        7.5,
+        7.173511505126953
+      ]
+    ],
+    "dimensions_m": [
+      16.0,
+      15.0,
+      7.9035115242004395
+    ]
+  }
+}
