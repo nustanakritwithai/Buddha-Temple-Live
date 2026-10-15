@@ -1,5 +1,14 @@
 # Changes
 
+## 0.4.0 candidate
+- Add optional first/third-person view with manual drag look, sensitivity, pitch clamps and no pointer lock/head bob.
+- Harden mobile analog movement and independent multitouch ownership/cancellation.
+- Align bench/cushion seated poses to authored surfaces, provide safe stand/reload anchors and restore cushion REST after practice/Realm.
+- Add continuous stair support, movement substeps, missing obstacle proxies and cushion-height support.
+- Make mobile HUD/context controls more compact; preserve access through settings.
+- Preserve source content, Realm sandbox/quiet-state behavior and local-only status.
+- No remote publication; device/runtime validation remains UNKNOWN.
+
 ## 0.3.0
 - Separate untimed REST from explicit 3/5/10/15-minute PRACTICE, pause/exit and fixed camera.
 - Add eight GDD anchors, pavilion access/three cushions, slow walking path and quiet-zone behavior.
