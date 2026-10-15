@@ -1,0 +1,36 @@
+name: Publish browser prototype
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out published artifacts
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Read existing Pages configuration
+        uses: actions/configure-pages@v5
+        with:
+          enablement: false
+      - name: Upload prebuilt static prototype
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -53,7 +53,7 @@ Public prototype target: https://nustanakritwithai.github.io/Buddha-Temple-Live/
 
 Vite base is `/Buddha-Temple-Live/` for GitHub Pages project hosting. Editable source, lockfile, original GLBs and tests are in `app/`. Build from that directory using `npm ci`, `npm test`, and `npm run build`. Generated contents of `app/dist/` are checked in at the repository root and mirrored in `docs/`; `.nojekyll` disables Jekyll processing. Both layouts support Pages branch publishing, depending on the configured source folder. After rebuilding, replace both static copies together. This prototype does not configure DNS, a VPS, or an always-on simulation.
 
-The current publication uses an explicitly approved repository commit, not an automatic deployment workflow. GitHub Pages source settings must point to this branch at `/` or `/docs`.
+The Pages workflow deploys the checked-in `docs/` artifact on pushes to `main` or manual dispatch. It reads existing Pages configuration without enabling or changing Pages settings, uses GitHub's official actions and transient workflow permissions, and creates no persistent credentials. Branch-based Pages can also use `/` or `/docs` if that is the configured source.
 
 ## Validation and limitations
 
