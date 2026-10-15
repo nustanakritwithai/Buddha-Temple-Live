@@ -1,10 +1,10 @@
-# ลานพักใจ · AI Living Temple
+# สัปปายะวัด · AI Living Temple v0.3.0
 
-A web-first, Thai-language 3D courtyard vertical slice. A static browser prototype for GitHub Pages. It does not connect to a VPS or persistent world server.
+Thai-language browser-only courtyard prototype, extending the original real GLB scene. This release separates rest from practice, adds the eight GDD areas and cited learning content, and connects the user's existing Infinite Stillness prototype through a local sandboxed iframe. No server, authentication, multiplayer or offline world is connected.
 
-## Run
+## Run and build
 
-Requires Node.js 22.18+ (tested with 24.19.0) and npm. Dependencies and their exact versions are recorded in package-lock.json.
+Node.js 22.18+ (tested with 24.19.0), npm:
 
 ```sh
 npm ci
@@ -15,47 +15,60 @@ npm run build
 npm run preview -- --host 127.0.0.1
 ```
 
-If npm's default cache directory is unavailable, use `npm ci --cache /tmp/temple-npm-cache`. The development host defaults to loopback; to test from another device on a trusted LAN, explicitly run `npm run dev -- --host 0.0.0.0` on a machine that permits network-interface inspection. No port forwarding or server setup is performed by this project.
+Use `npm ci --cache /tmp/temple-npm-cache` if the default cache directory is unavailable. Exact dependencies are pinned in the lockfile. Vite 8 uses `build.rolldownOptions.output.codeSplitting: false`; deployment consists of HTML, one JS bundle, CSS, two GLBs, asset license and the standalone Realm HTML. Preserve the `/Buddha-Temple-Live/` base. A publishing worker owns root/docs layout and the existing Pages workflow; this source package does not deploy itself.
 
-## What's implemented
+## Eight actual areas
 
-- A real GLB courtyard and independently instantiated original GLB gardener, with the duplicate static gardener removed.
-- A distinct procedural ivory-shirted visitor, keyboard and touchscreen walking, orbit/zoom camera, bounded courtyard movement with simple collision proxies.
-- Rest/stand and return-to-entrance controls, Thai help and settings dialogs.
-- A deterministic local gardener loop: walk, water, rest. Movement is whole-model translation/rotation; the source model has no skeletal rig or animation clips.
-- Fixed 60 Hz simulation outside the renderer; hidden-tab simulation pauses without catch-up. Closing the page stops the world. There is no fabricated offline history.
-- Reduced-motion setting (initially respects OS preference). Optional synthesized ambient tones are off by default and require explicit interaction.
-- Defensive localStorage persistence for validated visitor position and reduced-motion setting only. No credentials, accounts, analytics, external fonts, paid APIs or external audio.
-- Honest browser-demo status: “โหมดทดลองในเบราว์เซอร์ · ยังไม่เชื่อมเซิร์ฟเวอร์”.
-- Loading, model-load failure/retry and unsupported-WebGL UI.
+- Z01 entrance: optional welcome-guide text, learning and honest schedule availability.
+- Z02 central path: opt-in slow walking practice along an actual bounded path.
+- Z03 pavilion: accessible central stairs/floor, three selectable cushion coordinates, sitting practice and opt-in Infinite Stillness.
+- Z04 tree: untimed rest and reading.
+- Z05 pond: optional fixed-camera observation practice and removing one simulated floating leaf.
+- Z06 garden: local watering/moist-soil effect and removing simulated fallen leaves.
+- Z07 benches: rest and reading at the bench-front anchor; no forced timer or statistics. The guest currently sits on the ground in front of the bench, not on its seat geometry.
+- Z08 safe perimeter: bounded movement and no contextual dialogue trigger.
 
-## Controls
+The “พื้นที่ / เรียนรู้” panel provides explicit “ไปยังจุดนี้” navigation for each actual anchor. These are convenient repositioning controls, not animated pathfinding. Keyboard WASD/arrows and touch joystick remain available. Drag/pinch/scroll controls the camera manually during exploration; no automatic camera follow. Simple conservative colliders protect the pond, tree, benches, outer boundary and pavilion edges. Stairs use discrete height bands, not a physics solver/navmesh.
 
-Desktop: WASD/arrows to walk relative to the current camera; drag the scene to orbit; scroll to zoom. Touch: left joystick to walk; drag the scene to orbit; pinch to zoom. “นั่งพัก” stops walking; “ลุกเดิน” resumes. “กลับทางเข้า” resets position and camera. Dialogs support keyboard focus, Escape, and close buttons.
+## Rest and practice contract
 
-The courtyard is walkable; pavilion interior/stairs, pond, planters and benches use conservative non-walkable zones. The visitor rest pose is a simplified compressed model, not a full articulated sitting animation. No full meditation realm is implemented.
+REST: sit without a timer, session record, score or reminder. Stand whenever desired.
 
-## Architecture
+PRACTICE: explicitly choose 3/5/10/15 minutes. Pause/resume and immediate exit remain visible. The camera is fixed, normal HUD is hidden, gardener movement and activity/popups are suppressed, and optional ambient sound is suspended. Completion stays in the quiet scene until the user exits. Exit restores the exact selected cushion/starting point. Walking practice follows the central path and can stop immediately. No achievement, spiritual score, streak, diagnosis or attainment inference exists.
 
-- `src/simulation.ts`: pure movement/collision, gardener state machine and save validation.
-- `src/adapter.ts`: `WorldAdapter` interface and local implementation. A future authoritative transport can replace this interface; no remote connection exists today.
-- `src/main.ts`: Babylon renderer, input mapping and accessible DOM interface.
-- `src/style.css`: responsive Thai interface.
-- `tests/simulation.test.ts`: deterministic simulation and persistence tests.
-- `public/assets/`: original GLBs and their reuse statement.
+Practice timers use foreground simulation time, pause while hidden and do not catch up after inactivity. Severe rendering stalls can make timers slower than wall time. They are casual practice aids, not precision alarms. Rest and practice history are not persisted. Only validated visitor position and reduced-motion preference are saved through guarded localStorage. Activity logs contain at most eight local garden events, reset on reload, and do not fabricate events while closed.
 
-Coordinate convention: glTF right-handed Y-up, metres. Entrance is toward +Z; pavilion toward −Z. Asset source Blender coordinates were Z-up. Source assets are copied without modification; editable Blender originals are in the separate asset pack and intentionally not shipped to the web client.
+## Learning content
 
-## Build and publication
+`src/content.ts` supplies 17 original Thai educational summaries/activities, seven MN107 themes and additional core/optional primary-source readings, with 11 distinct source URLs. Five learning routes are explicitly modern organization rather than canonical stages. UI shows original-source audience, source links, summary/adaptation labels and limits. Users may read, skip or close without scoring or belief profiling. The source-verification flag reflects checked references, not expert religious certification.
 
-Public prototype target: https://nustanakritwithai.github.io/Buddha-Temple-Live/
+Chanting recordings, guided teaching audio, LLM religious conversation, authoritative group schedules and persistent world automation remain disabled/unavailable. No unverified audio or scripture translation is silently substituted.
 
-Vite base is `/Buddha-Temple-Live/` for GitHub Pages project hosting. `dist/` is the static production output. To publish, upload the contents of `dist/` through the repository's chosen Pages workflow; this project does not push, deploy, modify DNS or configure a server. A different hosting subpath requires changing `base` in `vite.config.ts` before rebuilding. Root HTML and all GLB/module URLs must use the same base.
+## Existing Infinite Stillness integration
 
-## Validation and limitations
+The real user-owned model-generated Library HTML is copied under `public/realm/infinite-stillness.html`; the original remains unchanged. It has self-contained procedural WebGL2 rendering and no external assets/network calls. The host uses a sandboxed iframe (`allow-scripts`, no same-origin permission), a per-session nonce and exact-window/opaque-origin message validation. The host uses a native modal dialog for background inert/focus containment and always has a visible exit button, disposes/removes the iframe and returns to the same cushion. Voice is off initially; any voice enablement requires a user action inside the prototype. Its generic guidance is product text, not scripture or an assessment of the user's mind. The host world stops rendering while the overlay is open. WebGL2 fallback remains local to the Realm and must not crash the temple.
 
-TypeScript checks, production build and five deterministic tests passed in the cloud workspace. Independent QA also reran the five tests and inspected both GLB containers. Actual browser-render testing was blocked in this cloud session: Chromium socket creation was denied by the sandbox, and its escalated launch failed before execution. Therefore visual rendering, touchscreen interaction and audio behavior remain unverified. No genuine in-browser screenshot was captured. Physical Android/iOS devices and weak-device performance have not been verified; no mobile FPS claim is made. WebGL is required. Browser storage can be blocked/cleared and is intentionally optional. This prototype has no backend, authoritative persistence, multiplayer, chat/LLM service, authentication, security-reviewed API or production uptime guarantee. Babylon is bundled locally and can still be significant on slow connections.
+This is integration code with deterministic protocol coverage, NOT a verified desktop/mobile runtime pass. Browser rendering, cross-frame input/audio, WebGL fallback and actual restoration still need device testing before production claims.
 
-## Licenses
+## Files
 
-Original GLB geometry/materials were procedurally generated for this project; see `public/assets/LICENSE.txt` for the asset reuse statement. No downloaded models/textures/audio are used. Babylon.js packages are Apache-2.0; Vite is MIT; TypeScript is Apache-2.0; Playwright is Apache-2.0. Their license files are included in installed dependencies. No third-party ownership or copyright exclusivity is asserted for generated project code, and no additional outbound code license has been selected on the repository owner's behalf.
+- `src/main.ts`, `style.css`: Babylon view, DOM controls, local interactions, host coordination.
+- `src/simulation.ts`, `adapter.ts`: bounded movement and deterministic local gardener.
+- `src/zones.ts`: eight anchors, cushion coordinates and floor height bands.
+- `src/practice.ts`: explicit REST/PRACTICE, pause, quiet policy, walking and return state.
+- `src/visitor.ts`: articulated procedural visitor; the original gardener GLB remains unrigged.
+- `src/experience.ts`: small local activity/movement helpers (legacy V0.2 timer helpers remain unused by the V0.3 UI).
+- `src/content.ts`: sourced learning data; no runtime generation.
+- `src/realm.ts`, `realm-protocol.ts`: sandboxed prototype lifecycle boundary.
+- `tests/`: deterministic state, content and protocol checks.
+- `RELEASE-MANIFEST.json`: exact final test count and distribution hashes.
+
+## Validation and outstanding scope
+
+Typecheck, production build and unit-test results are recorded in the release manifest. No manual browser gate was run for this increment, following the user's request to keep developing. Runtime, visual fidelity, touch usability and physical Android/iOS performance remain UNKNOWN. No FPS claim or production readiness claim is made. Six original static files become seven with the actual standalone Realm HTML.
+
+Future work: real-device acceptance, continuous stair traversal/collision tuning, seated bench placement, authorized chant/audio assets and review, authoritative server scheduling/persistence, authentication and admin controls. Those server features need suitable resources and separate implementation; the overloaded VPS has not been touched.
+
+## Licenses and provenance
+
+Original procedural GLB geometry/materials: `public/assets/LICENSE.txt`. Babylon.js Apache-2.0, Vite MIT, TypeScript Apache-2.0, Playwright Apache-2.0. No third-party downloaded models, fonts or audio. The Realm originated from the user's existing model-generated Library artifact; no third-party runtime/assets were found in its inspected source. Learning summaries are newly written paraphrases with linked sources, not republished translations. No new outbound repository code license or exclusivity claim is made on the owner's behalf.

@@ -1,0 +1,58 @@
+{
+  "version": "0.3.0",
+  "checks": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "unit_tests": {
+      "passed": 30,
+      "failed": 0
+    },
+    "browser_runtime": "UNKNOWN - not run per user direction",
+    "physical_android_ios": "UNKNOWN - not run",
+    "realm_inline_script_syntax": "passed by artifact reviewer"
+  },
+  "known_gaps": [
+    "Licensed/reviewed chanting and teaching audio unavailable",
+    "Authoritative schedules, persistence, multiplayer and LLM chat not connected",
+    "Bench rest uses ground-seated bench-front anchor",
+    "Stair heights are discrete bands; physical-device traversal unverified",
+    "Actual iframe rendering/audio/focus/exit requires device validation"
+  ],
+  "dist_files": [
+    {
+      "path": "assets/LICENSE.txt",
+      "bytes": 561,
+      "sha256": "abe3072502e53bf8844418679c7433c71cb9efc9735dc05b80ee9d13c80e0686"
+    },
+    {
+      "path": "assets/ai_gardener_npc.glb",
+      "bytes": 98760,
+      "sha256": "cbd3d8ff5a28ce7d213b038047b35efed8e94780ab323eacbddbbbddae783ff4"
+    },
+    {
+      "path": "assets/index-BFugjxxo.css",
+      "bytes": 10396,
+      "sha256": "67b4356cf7fa059d86e058633a1c0c73415b9c816fdac46577e852c5f6a04513"
+    },
+    {
+      "path": "assets/index-DDDEDLN2.js",
+      "bytes": 3091192,
+      "sha256": "6e18e09d3e1121b8c1dbf2e77e2deaa2e5e6854efb91bf2c3456cb6939ab8405"
+    },
+    {
+      "path": "assets/living_temple_scene.glb",
+      "bytes": 998260,
+      "sha256": "99f555f427eacd64f430fdbf6641f32f59728fddc5967e4634f48e00aae54e53"
+    },
+    {
+      "path": "index.html",
+      "bytes": 705,
+      "sha256": "3d2c961452904793f022754f619fca4abdd36e5ddc14c75df70c2b2a74ee4e1e"
+    },
+    {
+      "path": "realm/infinite-stillness.html",
+      "bytes": 59024,
+      "sha256": "f105999302f7f4abf05cf533aa13728486cc82afd2076c0bf2938aaf84f68293"
+    }
+  ]
+}

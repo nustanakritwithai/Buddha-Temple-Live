@@ -1,6 +1,6 @@
 {
   "name": "buddha-temple-live",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "",
   "directories": {
     "test": "tests"
@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
-    "test": "node --experimental-strip-types --test tests/simulation.test.ts"
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
   },
   "keywords": [],
   "author": "",

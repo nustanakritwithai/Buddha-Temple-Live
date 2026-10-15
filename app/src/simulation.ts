@@ -2,14 +2,14 @@ export type Point = { x: number; z: number };
 export const ENTRANCE: Point = { x: 0, z: 5.8 };
 const circles = [{x:-4.7,z:-1.8,r:1.95},{x:4.6,z:-1.55,r:2.23},...[-6.9,6.9].flatMap(x=>[-5.6,-3.4,-.4,2.6,5.6].map(z=>({x,z,r:.6}))),...[-5.9,5.9].map(x=>({x,z:4.7,r:.8}))];
 export function walkable(p: Point): boolean {
- return Number.isFinite(p.x)&&Number.isFinite(p.z)&&Math.abs(p.x)<=7.3&&Math.abs(p.z)<=6.8 && !(Math.abs(p.x)<3.85&&p.z<.55) && !circles.some(c=>Math.hypot(p.x-c.x,p.z-c.z)<c.r) && ![-4.6,4.6].some(x=>Math.abs(p.x-x)<1.4&&Math.abs(p.z-2.6)<.75);
+ return Number.isFinite(p.x)&&Number.isFinite(p.z)&&Math.abs(p.x)<=7.3&&Math.abs(p.z)<=6.8 && (!(Math.abs(p.x)<3.85&&p.z<.55)||(Math.abs(p.x)<1.25&&p.z>=-.8)||(Math.abs(p.x)<2.4&&p.z<=-.6&&p.z>=-5.7)) && !circles.some(c=>Math.hypot(p.x-c.x,p.z-c.z)<c.r) && ![-4.6,4.6].some(x=>Math.abs(p.x-x)<1.4&&Math.abs(p.z-2.6)<.75);
 }
 export function movePlayer(p:Point, input:Point, dt:number):Point {
  const magnitude=Math.hypot(input.x,input.z);if(!magnitude||!Number.isFinite(magnitude))return {...p};
  const scale=2.5*Math.max(0,Math.min(.05,dt))/Math.max(1,magnitude);
  const next={...p}; const x=next.x+input.x*scale;if(walkable({x,z:next.z}))next.x=x;const z=next.z+input.z*scale;if(walkable({x:next.x,z}))next.z=z;return next;
 }
-const route=[{x:-2.3,z:5.65,mode:'walking',seconds:0},{x:-5.9,z:5.65,mode:'watering',seconds:5},{x:-2.3,z:5.65,mode:'walking',seconds:0},{x:-2.5,z:2.7,mode:'resting',seconds:7}] as const;
+const route=[{x:-2.3,z:5.65,mode:'walking',seconds:0},{x:-5.08,z:5.65,mode:'watering',seconds:5},{x:-2.3,z:5.65,mode:'walking',seconds:0},{x:-3.1,z:2.7,mode:'resting',seconds:7}] as const;
 export type Gardener={position:Point;phase:number;wait:number;mode:'walking'|'watering'|'resting';heading:number};
 export function initialGardener():Gardener{return {position:{x:-1.9,z:3.65},phase:0,wait:0,mode:'walking',heading:0};}
 export function stepGardener(state:Gardener,dt:number):Gardener {
