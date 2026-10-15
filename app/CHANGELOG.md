@@ -1,5 +1,12 @@
 # Changes
 
+## 0.6.1 candidate
+
+- Route split gestures through the app while excluding interactive UI, and pass decorative HUD touches through.
+- Use canvas-relative half boundaries, touch-aware admission and window-level release cleanup.
+- Test the actual first-person Babylon camera pose/render path alongside simultaneous movement/look.
+- Physical mobile result remains unverified; do not infer the user-device root cause solely from headless tests.
+
 ## 0.6.0 candidate
 
 - Integrate approved higher-detail environment with embedded CC0 PBR textures and provenance.

@@ -1,22 +1,22 @@
 {
-  "version": "0.6.0",
-  "status": "approved publication artifact; see GitHub Actions for deployment outcome",
+  "version": "0.6.1",
+  "status": "publication artifact; see GitHub Actions for deployment outcome",
   "baseline": {
-    "filename": "buddha-temple-web-v0.6.0-baseline-v0.5.1.zip",
-    "sha256": "0a4bc7a37e2ee7dac229252b41fd817a884bd1347c1af75b51fde5da0b165ce3"
+    "filename": "buddha-temple-web-v0.6.1-baseline-v0.6.0.zip",
+    "sha256": "9f4fcf65d88c77dd82b4f5b8fb06ecb522566b77b27951000b666d89d77cb2fe"
   },
   "checks": {
     "typescript": "passed",
     "production_build": "passed",
     "repository_tests": {
-      "passed": 55,
+      "passed": 57,
       "failed": 0
     },
     "independent_review_tests": {
-      "passed": 28,
+      "passed": 37,
       "failed": 0
     },
-    "qa_report_sha256": "767fc4dee9142a8934c175bd260d8b7f023a90233323f7f47e8af46945303dd3",
+    "qa_report_sha256": "8b2edbbf732862b024cfeaa61d6f0a60de121a2ca270cc9ecbef033a7badf2a9",
     "browser_runtime": "UNKNOWN - not run",
     "physical_android_ios": "UNKNOWN - not run"
   },
@@ -31,14 +31,18 @@
     "Independent multitouch release and quiet/modal/Realm controls regression coverage",
     "Approved V0.6 environment with embedded PBR/CC0 provenance",
     "Measured floor/cushion/bench supports, rail/column/table/bed proxies and safe watering point",
-    "Original scene retained inactive for rollback; existing NPC character art unchanged"
+    "Original scene retained inactive for rollback; existing NPC character art unchanged",
+    "App-level gesture routing excludes controls and passes noninteractive HUD touches",
+    "Canvas-relative halves, touch admission and global pointer release cleanup",
+    "Actual Babylon NullEngine render/view-matrix and simultaneous walking/look integration tests"
   ],
   "known_gaps": [
     "Actual sign readability, mesh picking and mobile UI unverified",
     "Bundled entry JS remains large",
     "LLM conversation, authoritative server schedules/persistence and licensed teaching audio not connected",
     "11.54 MB scene and 111270 triangles require real-device performance checks",
-    "Authored conservative collisions and smooth stair ramp are not a generated navmesh"
+    "Authored conservative collisions and smooth stair ramp are not a generated navmesh",
+    "Exact reporting-device cause and physical Android fix outcome remain unconfirmed"
   ],
   "dist_files": [
     {
@@ -52,14 +56,14 @@
       "sha256": "cbd3d8ff5a28ce7d213b038047b35efed8e94780ab323eacbddbbbddae783ff4"
     },
     {
-      "path": "assets/index-CS2t4HE6.css",
-      "bytes": 15463,
-      "sha256": "27de2528909bebbc9fd8664c8da38d3324abdcd6173d7c9e6371703191b18f6d"
+      "path": "assets/index-BVGQqlBh.css",
+      "bytes": 15749,
+      "sha256": "ddc95931363f5681610b1c10377acfa73383bfb5ee1aa9705a123cb66ed61207"
     },
     {
-      "path": "assets/index-D5uQlQ5G.js",
-      "bytes": 3118283,
-      "sha256": "91345afa6c1c5293912e4beacf8d87c94539fe946e384afa209576bded83d738"
+      "path": "assets/index-CNJf6at5.js",
+      "bytes": 3118686,
+      "sha256": "d13f548a6a40a20c60da52ee5c20f34a8df8cca4a966b0161970e14d12772cc2"
     },
     {
       "path": "assets/living_temple_scene.glb",
@@ -74,7 +78,7 @@
     {
       "path": "index.html",
       "bytes": 705,
-      "sha256": "d2df2aed1e0d509891dfa0a9e802b486f8e3d1184dd5e3f0af9d95f88a229184"
+      "sha256": "93c05de2585631a9521788c7df308910b6c299df93fb204690b4a5631771b188"
     },
     {
       "path": "realm/infinite-stillness.html",

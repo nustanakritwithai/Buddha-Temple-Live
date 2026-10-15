@@ -1,4 +1,4 @@
-# สัปปายะวัด · AI Living Temple v0.6.0
+# สัปปายะวัด · AI Living Temple v0.6.1
 
 Thai-language browser-only courtyard prototype, using the approved higher-detail V0.6 GLB environment. This candidate adds first-person-only view, mobile input hardening, geometry-aligned seating and a compact HUD while preserving the eight GDD areas, cited learning content and rest/practice separation. It connects the user's existing Infinite Stillness prototype through a local sandboxed iframe. No server, authentication, multiplayer or offline world is connected.
 
@@ -112,6 +112,10 @@ Collision proxies now account for side/rear rails, six column feet, the tea tabl
 
 CC0 provider URLs, authors, modifications and source hashes are carried under `asset-provenance/v06/` and the shipped asset license. The editable packed Blender/rebuild/source asset pack remains a separate deliverable; it is not downloaded by browsers. Source ZIP includes both environment GLBs and rollback baseline identity. The 11.54 MB environment and ~3.12 MB JS bundle warrant real low-end-device testing before production claims.
 
+## V0.6.1 rotation-input repair
+
+Gesture starts are handled on the app capture path, excluding actual controls/dialogs. Noninteractive right-side minimap/rest surfaces and toolbar/action gaps pass input through, rather than swallowing it before canvas-only listeners. Half selection uses the canvas bounding rectangle rather than assuming full viewport alignment; touch pointers are not filtered by mouse-button rules. Simultaneous left movement/right look keeps independent ownership. Window-level end/cancel clears owners even if capture fails and a finger exits the app. First-person pose is applied through a shared helper tested against Babylon NullEngine render/view matrices. This validates actual camera transforms without claiming a WebGL display or physical Android pass. The exact cause on the reporting user's device remains unconfirmed; confirmed source-level hit-area weaknesses are repaired.
+
 ## Repository publication layout
 
-Editable source, lockfile, tests, content and original assets are in `app/`. Build there with `npm ci`, `npm test`, and `npm run build`. The eight compiled files from `app/dist/` are mirrored at the repository root and in `docs/`. Replace both static copies when rebuilding. The existing official GitHub Pages workflow deploys checked-in `docs/` on pushes to `main`, without changing Pages settings or creating persistent credentials. This publication includes the approved replacement environment, retaining the original scene inactive. See GitHub Actions for deployment outcome. No VPS or DNS changes are included.
+Editable source, lockfile, tests, content and original assets are in `app/`. Build there with `npm ci`, `npm test`, and `npm run build`. The eight compiled files from `app/dist/` are mirrored at the repository root and in `docs/`. Replace both static copies when rebuilding. The existing official GitHub Pages workflow deploys checked-in `docs/` on pushes to `main`, without changing Pages settings or creating persistent credentials. This patch addresses the reported walking/look input problem; physical-device outcome remains unverified. See GitHub Actions for deployment outcome. No VPS or DNS changes are included.

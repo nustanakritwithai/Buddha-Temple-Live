@@ -11,3 +11,6 @@ dialog.realm-overlay{width:100vw;height:100dvh;max-width:none;max-height:none;ma
 
 /* Both halves belong to the canvas; decorative controls never intercept gestures. */
 .joystick{pointer-events:none}.joystick.floating{display:flex!important;position:fixed;bottom:auto!important;transform:translate(-50%,-50%);width:96px;height:96px;z-index:3}.brand,.guide{pointer-events:none}
+
+/* Noninteractive HUD gaps belong to the world; only real controls intercept touch. */
+#app{overscroll-behavior:none}.practice-panel{touch-action:none}.rest-panel,.minimap,.context-actions,.tools,.actions{pointer-events:none}.context-actions button,.tools button,.actions button{pointer-events:auto}dialog{touch-action:auto}#world{user-select:none;-webkit-user-select:none}
