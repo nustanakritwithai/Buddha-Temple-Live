@@ -1,0 +1,9 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {allowsDiscovery,nearbyStation,canOpenStation} from '../src/discovery.ts';
+import {LEARNING_STATIONS} from '../src/learning-stations.ts';
+const active={mode:'EXPLORE' as const,modalOpen:false,realmOpen:false,visible:true};
+test('station discovery is near-only and never creates UI or visitation state',()=>{for(const station of LEARNING_STATIONS){assert.equal(nearbyStation(station.position,LEARNING_STATIONS,active)?.id,station.id);assert.ok(canOpenStation(station.position,station,active));assert.equal(canOpenStation({x:station.position.x+station.radius+.01,z:station.position.z},station,active),false);}assert.equal(nearbyStation({x:50,z:50},LEARNING_STATIONS,active),null);});
+test('REST PRACTICE modal Realm and hidden states suppress all discovery actions',()=>{const station=LEARNING_STATIONS[0];for(const context of [{...active,mode:'REST' as const},{...active,mode:'PRACTICE' as const},{...active,modalOpen:true},{...active,realmOpen:true},{...active,visible:false}]){assert.equal(allowsDiscovery(context),false);assert.equal(nearbyStation(station.position,LEARNING_STATIONS,context),null);assert.equal(canOpenStation(station.position,station,context),false);}});
+test('repeated discovery is pure and does not unlock or mark a station',()=>{const copy=JSON.stringify(LEARNING_STATIONS);for(let i=0;i<100;i++)nearbyStation(LEARNING_STATIONS[0].position,LEARNING_STATIONS,active);assert.equal(JSON.stringify(LEARNING_STATIONS),copy);assert.ok(LEARNING_STATIONS.every(s=>s.activation==='explicit'));});
+import {initialGardener,stepGardener} from '../src/simulation.ts';
+test('gardener route keeps clearance from new discovery props',()=>{let state=initialGardener();for(let i=0;i<12000;i++){state=stepGardener(state,1/60);for(const station of LEARNING_STATIONS)assert.ok(Math.hypot(state.position.x-station.propPosition.x,state.position.z-station.propPosition.z)>.5);}});

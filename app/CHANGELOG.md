@@ -1,5 +1,21 @@
 # Changes
 
+## 0.5.1 candidate
+
+- Enforce first-person-only view and remove the view toggle.
+- Disable Babylon camera input handlers; route left-half drags only to floating movement and right-half drags only to look.
+- Lock gesture ownership from touchdown through crossing, release and cancellation; preserve UI, modal, seated and practice behavior.
+- Preserve all V0.5 learning stations and cited content.
+
+## 0.5.0 candidate
+- Replace dominant course navigation with nearby, opt-in signs, books and a scripted AI helper.
+- Show short reflections first, with expandable explanations and original source/context labels.
+- Add optional ethics/five-precept/ritual-information helper branches with scripture versus ceremonial provenance distinguished.
+- Preserve the full 17-lesson catalogue as a secondary accessible book catalogue.
+- Suppress discovery prompts during rest/practice/modals/Realm; no automatic popups, gates or reading-history tracking.
+- Add original static props, simple collision proxies and gardener route clearance.
+- Development candidate only; no remote publish or device-runtime claims.
+
 ## 0.4.0 candidate
 - Add optional first/third-person view with manual drag look, sensitivity, pitch clamps and no pointer lock/head bob.
 - Harden mobile analog movement and independent multitouch ownership/cancellation.

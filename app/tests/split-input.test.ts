@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {beginGesture,gestureRole,finishGesture,defaultView,migrateView,switchView} from '../src/controls.ts';
+const empty=()=>({move:null,look:null});const allowed={move:true,look:true};
+test('first person is default and legacy third person cannot return',()=>{assert.equal(defaultView().mode,'first');assert.equal(migrateView({mode:'third'}).mode,'first');assert.equal(switchView(defaultView(),'third').mode,'first');});
+test('left and right retain ownership across midline',()=>{let o=beginGesture(empty(),1,30,400,allowed);o=beginGesture(o,2,300,400,allowed);assert.equal(gestureRole(o,1),'move');assert.equal(gestureRole(o,2),'look');assert.deepEqual(beginGesture(o,1,390,400,allowed),o);assert.deepEqual(beginGesture(o,2,10,400,allowed),o);});
+test('UI, disabled roles and invalid coordinates cannot start gestures',()=>{assert.deepEqual(beginGesture(empty(),1,30,400,allowed,true),empty());assert.deepEqual(beginGesture(empty(),1,30,400,{move:false,look:true}),empty());assert.deepEqual(beginGesture(empty(),1,300,400,{move:true,look:false}),empty());assert.deepEqual(beginGesture(empty(),1,NaN,400,allowed),empty());});
+test('midpoint belongs right; unrelated cancellation and independent fingers',()=>{let o=beginGesture(empty(),1,200,400,allowed);o=beginGesture(o,2,20,400,allowed);assert.equal(o.look,1);assert.deepEqual(finishGesture(o,99),o);assert.deepEqual(finishGesture(o,2),{move:null,look:1});assert.deepEqual(finishGesture(o,1),{move:2,look:null});});

@@ -1,31 +1,39 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.1",
   "status": "approved publication artifact; see GitHub Actions for deployment outcome",
   "baseline": {
-    "filename": "buddha-temple-web-v0.4.0-baseline-v0.3.zip",
-    "sha256": "e96ef00eef6c500a57d041a09897008d62580e47e66b021abbce38a20c5136e3"
+    "filename": "buddha-temple-web-v0.5.1-baseline-v0.5.0.zip",
+    "sha256": "b211a81b9853a07ddd476fcbb4d73dd831605b1799ae6f7a45614fd91634dc5d"
   },
   "checks": {
     "typescript": "passed",
     "production_build": "passed",
     "repository_tests": {
-      "passed": 38,
+      "passed": 51,
       "failed": 0
     },
     "independent_review_tests": {
-      "passed": 11,
+      "passed": 24,
       "failed": 0
     },
-    "qa_report_sha256": "7a9756fd41d6dfcb0c5c7dcaf9609cc761f75b10d41cbb3a3e317b5c868b5385",
-    "browser_runtime": "UNKNOWN - no manual browser run",
+    "qa_report_sha256": "2006c9181b7aabf8e732c77f6adf71623c803bc6a5ccf1ff459511dc9dd12f7e",
+    "browser_runtime": "UNKNOWN - not run",
     "physical_android_ios": "UNKNOWN - not run"
   },
+  "scope": [
+    "Seven opt-in physical discovery stations",
+    "Short reflection first, expandable explanation/source/context",
+    "Scripted AI helper ethics/precepts/ceremonial-information branches",
+    "Secondary accessible full 17-lesson catalogue",
+    "No automatic popups, history, levels or practice gating",
+    "First person only, removed toggle and cleared engine camera inputs",
+    "Pointerdown-locked left movement / right look with floating joystick",
+    "Independent multitouch release and quiet/modal/Realm controls regression coverage"
+  ],
   "known_gaps": [
-    "First-person rendering, multitouch and responsive layout need real-device validation",
-    "Bundled entry JS remains about 3.10 MB /729 KB gzip",
-    "Collision uses conservative proxies and support ramps, not a physics/navmesh solver",
-    "Licensed/reviewed chanting and teaching audio unavailable",
-    "Server schedules/persistence, multiplayer and LLM chat not connected"
+    "Actual sign readability, mesh picking and mobile UI unverified",
+    "Bundled entry JS remains large",
+    "LLM conversation, authoritative server schedules/persistence and licensed teaching audio not connected"
   ],
   "dist_files": [
     {
@@ -39,14 +47,14 @@
       "sha256": "cbd3d8ff5a28ce7d213b038047b35efed8e94780ab323eacbddbbbddae783ff4"
     },
     {
-      "path": "assets/index-COp1XkD_.css",
-      "bytes": 13080,
-      "sha256": "0298bc0e9bd58bd25f344cf87a18d4cf165e69f79b4ee6f272749e737c1932f2"
+      "path": "assets/index-CS2t4HE6.css",
+      "bytes": 15463,
+      "sha256": "27de2528909bebbc9fd8664c8da38d3324abdcd6173d7c9e6371703191b18f6d"
     },
     {
-      "path": "assets/index-ZZAZZmBk.js",
-      "bytes": 3096763,
-      "sha256": "ceb47589e03b88e6f590e6bfb06bd481eb03f04cf8c31242cb8a8621ce028b10"
+      "path": "assets/index-CVLuodOo.js",
+      "bytes": 3117606,
+      "sha256": "13a594d26a9b8a0efd51934aba69d8b9654fc6acde2388c7116e4f1a69ea97b5"
     },
     {
       "path": "assets/living_temple_scene.glb",
@@ -56,7 +64,7 @@
     {
       "path": "index.html",
       "bytes": 705,
-      "sha256": "b15e8180cc0cca3b356d6968528daf27157560153eead8b0672f768ddf461e7b"
+      "sha256": "e0b327cef1d382222325790874de4fb82042d879455b62ea4867f833fc7ab854"
     },
     {
       "path": "realm/infinite-stillness.html",

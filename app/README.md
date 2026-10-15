@@ -1,6 +1,6 @@
-# สัปปายะวัด · AI Living Temple v0.4.0
+# สัปปายะวัด · AI Living Temple v0.5.1
 
-Thai-language browser-only courtyard prototype, extending the original real GLB scene. This candidate adds optional first-person view, mobile input hardening, geometry-aligned seating and a compact HUD while preserving the eight GDD areas, cited learning content and rest/practice separation. It connects the user's existing Infinite Stillness prototype through a local sandboxed iframe. No server, authentication, multiplayer or offline world is connected.
+Thai-language browser-only courtyard prototype, extending the original real GLB scene. This candidate adds first-person-only view, mobile input hardening, geometry-aligned seating and a compact HUD while preserving the eight GDD areas, cited learning content and rest/practice separation. It connects the user's existing Infinite Stillness prototype through a local sandboxed iframe. No server, authentication, multiplayer or offline world is connected.
 
 ## Run and build
 
@@ -28,13 +28,13 @@ Use `npm ci --cache /tmp/temple-npm-cache` if the default cache directory is una
 - Z07 benches: rest and reading at the bench-front anchor; no forced timer or statistics. Both benches have authored seat anchors at 0.765 m, a seated leg pose, and safe front stand/restore anchors.
 - Z08 safe perimeter: bounded movement and no contextual dialogue trigger.
 
-The “พื้นที่ / เรียนรู้” panel provides explicit “ไปยังจุดนี้” navigation for each actual anchor. These are convenient repositioning controls, not animated pathfinding. Keyboard WASD/arrows and touch joystick remain available. Drag/pinch/scroll controls the camera manually during exploration; no automatic camera follow. Simple conservative colliders protect the pond, tree, benches, outer boundary and pavilion edges. Stairs use a continuous support ramp and bounded visual height smoothing; cushion tops have their own support height. Movement is substepped with simple obstacle proxies, not a full physics solver/navmesh.
+The “เดินชมวัด” panel provides explicit “ไปยังจุดนี้” navigation for each actual anchor. These are convenient repositioning controls, not animated pathfinding. Keyboard WASD/arrows and touch joystick remain available. Start a drag on the unobstructed LEFT half to move (floating joystick), or RIGHT half to look. Ownership stays with that finger until release, even across the midpoint. UI controls do not initiate gestures. Engine camera inputs, pinch and wheel camera controls are disabled. Simple conservative colliders protect the pond, tree, benches, outer boundary and pavilion edges. Stairs use a continuous support ramp and bounded visual height smoothing; cushion tops have their own support height. Movement is substepped with simple obstacle proxies, not a full physics solver/navmesh.
 
 ## Rest and practice contract
 
 REST: sit without a timer, session record, score or reminder. Stand whenever desired.
 
-PRACTICE: explicitly choose 3/5/10/15 minutes. Pause/resume and immediate exit remain visible. The camera is fixed by default; an explicit practice checkbox can permit manual looking without movement. Normal HUD is hidden, gardener movement and activity/popups are suppressed, and optional ambient sound is suspended. Completion stays in the quiet scene until the user exits. Exit restores the selected camera mode and exact selected cushion/starting point; cushion sessions return to untimed seated REST. Standing then uses a safe stand anchor. Walking practice follows the central path and can stop immediately. No achievement, spiritual score, streak, diagnosis or attainment inference exists.
+PRACTICE: explicitly choose 3/5/10/15 minutes. Pause/resume and immediate exit remain visible. The camera is fixed by default; an explicit practice checkbox can permit manual looking without movement. Normal HUD is hidden, gardener movement and activity/popups are suppressed, and optional ambient sound is suspended. Completion stays in the quiet scene until the user exits. Exit restores the first-person orientation and exact selected cushion/starting point; cushion sessions return to untimed seated REST. Standing then uses a safe stand anchor. Walking practice follows the central path and can stop immediately. No achievement, spiritual score, streak, diagnosis or attainment inference exists.
 
 Practice timers use foreground simulation time, pause while hidden and do not catch up after inactivity. Severe rendering stalls can make timers slower than wall time. They are casual practice aids, not precision alarms. Rest and practice history are not persisted. Only validated visitor position (a safe standing position when seated) and reduced-motion preference are saved through guarded localStorage. Activity logs contain at most eight local garden events, reset on reload, and do not fabricate events while closed.
 
@@ -84,3 +84,19 @@ Joystick input has a radial dead zone and proportional speed. Blur, dialogs and 
 Mobile HUD hides redundant persistent help/activity buttons (still available in settings), increases touch targets, and adapts to short landscape viewports. These are implemented responsive rules, not physical-device verification. Audio is explicitly unchecked when practice suspends it, avoiding a misleading enabled switch after exit.
 
 This is a local release candidate only: no repository push or Pages publication is performed by the implementation worker. The V0.3 baseline snapshot and existing published release archives are preserved. Final repository and independent deterministic review results appear in RELEASE-MANIFEST.json. Browser visual behavior, two-finger interaction, WebGL cameras and physical mobile performance remain UNKNOWN.
+
+## V0.5 candidate: learning encountered naturally
+
+The primary presentation is now seven opt-in discovery stations: an explicitly labelled scripted AI helper near the entrance, small signs along the path/tree/pond/garden, and books at the pavilion approach and bench. Props are original lightweight meshes with locally rendered Thai text, no flashing markers, downloads or new packages. The existing helper is moved to its actual interaction point; gardener waypoints keep clearance from the new props.
+
+Walk close and explicitly choose the nearby action (or tap the nearby physical object) to read. First comes a short voluntary reflection. Explanations, all original lesson context/adaptation labels, source references and limitations remain expandable. There are no visit counts, completion states, unlocks, mandatory order or belief questions. Walking into range and selecting a destination never auto-open a window. The full 17-lesson catalogue remains available as a secondary book catalogue in settings and reading views; its five modern organization routes are collapsed by default.
+
+The helper offers authored choices about why ethical conduct matters, reviewing the five precepts, or learning what requesting precepts means. AN 11.1 and AN 8.39 support the educational branches; the separate traditional chanting guide is visibly labelled ceremonial, not sutta wording. The helper is explicitly scripted AI without an LLM, is not a monk, does not confer precepts, does not request a pledge and never gates access to practice. The user can simply leave quietly.
+
+Discovery and contextual prompts are suppressed during REST, PRACTICE, any open modal, hidden tabs and Realm. Every station open is revalidated for proximity and explicit user action. Native dialog close/Escape clears captured movement/look inputs without changing the selected camera view. No religious beliefs, personal answers or reading history are stored.
+
+New modules: `learning-stations.ts` (authored mapping/branches), `discovery.ts` (pure proximity/quiet-state policy), `station-meshes.ts` (original signs/books). `src/content.ts` and the 17-lesson catalogue are preserved. The candidate remains unpublished until scoped approval; final test counts/hashes are in the manifest. Actual text legibility, object picking and mobile layout remain UNKNOWN until runtime/device testing.
+
+## V0.5.1 control correction
+
+First person is the only active view. The former toggle is removed; legacy third-person preferences are ignored and the guarded settings rewrite removes stale fields. No camera engine inputs are attached. Each pointer owns movement or look from touchdown, supports simultaneous fingers, and releases independently; blur, hidden tabs, dialogs, resize and practice policy changes clear captures. Left movement is disabled while seated; practice right look requires the existing opt-in. Runtime/physical-mobile behavior remains unverified.
