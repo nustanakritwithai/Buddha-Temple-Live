@@ -1,0 +1,3 @@
+Original generated asset pack
+
+The included geometry, materials and source script were generated specifically for this project. No third-party model, texture or asset-library content is included. You may use, modify, distribute and integrate this generated material, including commercially, without attribution being required by this asset pack. This statement does not guarantee copyright eligibility, exclusivity, trademark clearance or cultural/architectural accuracy. Blender itself is separate software under its own license and is not redistributed here.

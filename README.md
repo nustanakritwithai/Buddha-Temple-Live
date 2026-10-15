@@ -7,6 +7,7 @@ A web-first, Thai-language 3D courtyard vertical slice. A static browser prototy
 Requires Node.js 22.18+ (tested with 24.19.0) and npm. Dependencies and their exact versions are recorded in package-lock.json.
 
 ```sh
+cd app
 npm ci
 npm run dev
 # http://127.0.0.1:4173/Buddha-Temple-Live/
@@ -50,7 +51,9 @@ Coordinate convention: glTF right-handed Y-up, metres. Entrance is toward +Z; pa
 
 Public prototype target: https://nustanakritwithai.github.io/Buddha-Temple-Live/
 
-Vite base is `/Buddha-Temple-Live/` for GitHub Pages project hosting. `dist/` is the static production output. To publish, upload the contents of `dist/` through the repository's chosen Pages workflow; this project does not push, deploy, modify DNS or configure a server. A different hosting subpath requires changing `base` in `vite.config.ts` before rebuilding. Root HTML and all GLB/module URLs must use the same base.
+Vite base is `/Buddha-Temple-Live/` for GitHub Pages project hosting. Editable source, lockfile, original GLBs and tests are in `app/`. Build from that directory using `npm ci`, `npm test`, and `npm run build`. Generated contents of `app/dist/` are checked in at the repository root and mirrored in `docs/`; `.nojekyll` disables Jekyll processing. Both layouts support Pages branch publishing, depending on the configured source folder. After rebuilding, replace both static copies together. This prototype does not configure DNS, a VPS, or an always-on simulation.
+
+The current publication uses an explicitly approved repository commit, not an automatic deployment workflow. GitHub Pages source settings must point to this branch at `/` or `/docs`.
 
 ## Validation and limitations
 

@@ -1,0 +1,7 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {ENTRANCE,walkable,movePlayer,initialGardener,stepGardener,parseSave} from '../src/simulation.ts';
+test('entrance is safe and invalid values are rejected',()=>{assert.ok(walkable(ENTRANCE));assert.equal(walkable({x:NaN,z:0}),false);assert.equal(walkable({x:0,z:0}),false);assert.equal(walkable({x:4.6,z:-1.55}),false);});
+test('diagonal speed is normalized',()=>{const a=movePlayer(ENTRANCE,{x:1,z:0},.05),b=movePlayer(ENTRANCE,{x:1,z:1},.05);assert.ok(Math.abs(Math.hypot(a.x,a.z-5.8)-Math.hypot(b.x,b.z-5.8))<1e-10);});
+test('movement remains bounded for long-held input',()=>{let p={...ENTRANCE};for(let i=0;i<5000;i++)p=movePlayer(p,{x:1,z:1},1/60);assert.ok(walkable(p));assert.ok(p.x<=7.3&&p.z<=6.8);});
+test('gardener is deterministic and reaches all modes',()=>{let a=initialGardener(),b=initialGardener();const modes=new Set();for(let i=0;i<6000;i++){a=stepGardener(a,1/60);b=stepGardener(b,1/60);modes.add(a.mode);}assert.deepEqual(a,b);assert.deepEqual([...modes].sort(),['resting','walking','watering']);});
+test('save validation handles corrupt, outdated and unsafe state',()=>{for(const raw of ['broken','null','{}','{"version":2}','{"version":1,"position":{"x":0,"z":0},"reducedMotion":false}'])assert.equal(parseSave(raw),null);assert.deepEqual(parseSave(JSON.stringify({version:1,position:ENTRANCE,reducedMotion:true})),{version:1,position:ENTRANCE,reducedMotion:true});});
