@@ -1,5 +1,12 @@
 # Changes
 
+## 0.7.0 candidate
+
+- Add explicit Thai browser-voice narration for visible learning station/helper text, with synthetic-voice label and source links.
+- Provide play/pause/resume/stop and next-play volume; unavailable/error states retain text.
+- Cancel speech across reading/quiet/Realm/page transitions, suppress queue overlap and stale callbacks, preserve bfcache reuse.
+- Restore exact deployed V0.6.1 baseline before changes; no new runtime packages or paid audio services.
+
 ## 0.6.1 candidate
 
 - Route split gestures through the app while excluding interactive UI, and pass decorative HUD touches through.

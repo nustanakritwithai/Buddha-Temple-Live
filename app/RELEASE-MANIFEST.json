@@ -1,24 +1,27 @@
 {
-  "version": "0.6.1",
-  "status": "publication artifact; see GitHub Actions for deployment outcome",
+  "version": "0.7.0",
+  "status": "approved publication artifact; see GitHub Actions for deployment outcome",
   "baseline": {
-    "filename": "buddha-temple-web-v0.6.1-baseline-v0.6.0.zip",
-    "sha256": "9f4fcf65d88c77dd82b4f5b8fb06ecb522566b77b27951000b666d89d77cb2fe"
+    "filename": "buddha-temple-v07-baseline-v061.zip",
+    "sha256": "a24923af62591b15b7e39ebdf7b25ff212a5d4a401077e5ebab0b84bacf1b730",
+    "restored_commit": "8ea22c7de91d94af8a0bb61392ca427e7a8282f9",
+    "restored_path": "app/",
+    "main_sha256_before_edits": "7de96281da5a65fa76341780f8915337dfcbdc6e2ebeb858d536b4f95f02f240"
   },
   "checks": {
     "typescript": "passed",
     "production_build": "passed",
     "repository_tests": {
-      "passed": 57,
+      "passed": 62,
       "failed": 0
     },
     "independent_review_tests": {
-      "passed": 37,
+      "passed": 44,
       "failed": 0
     },
-    "qa_report_sha256": "8b2edbbf732862b024cfeaa61d6f0a60de121a2ca270cc9ecbef033a7badf2a9",
     "browser_runtime": "UNKNOWN - not run",
-    "physical_android_ios": "UNKNOWN - not run"
+    "physical_android_ios": "UNKNOWN - not run",
+    "qa_report_sha256": "572df89933951a80a239ca8dea81d7c3562f2a9d6597cb98bb9365103b26f23d"
   },
   "scope": [
     "Seven opt-in physical discovery stations",
@@ -34,7 +37,10 @@
     "Original scene retained inactive for rollback; existing NPC character art unchanged",
     "App-level gesture routing excludes controls and passes noninteractive HUD touches",
     "Canvas-relative halves, touch admission and global pointer release cleanup",
-    "Actual Babylon NullEngine render/view-matrix and simultaneous walking/look integration tests"
+    "Actual Babylon NullEngine render/view-matrix and simultaneous walking/look integration tests",
+    "Opt-in Thai browser speech for visible station/helper educational text",
+    "Synthetic voice label, visible citation, play/pause/resume/stop and next-play volume",
+    "No autoplay/overlapping queues; lifecycle cancellation and unavailable-voice fallback"
   ],
   "known_gaps": [
     "Actual sign readability, mesh picking and mobile UI unverified",
@@ -42,7 +48,9 @@
     "LLM conversation, authoritative server schedules/persistence and licensed teaching audio not connected",
     "11.54 MB scene and 111270 triangles require real-device performance checks",
     "Authored conservative collisions and smooth stair ramp are not a generated navmesh",
-    "Exact reporting-device cause and physical Android fix outcome remain unconfirmed"
+    "Exact reporting-device cause and physical Android fix outcome remain unconfirmed",
+    "Native Thai voice availability, pronunciation and Android/browser pause behavior not verified",
+    "Browser/system voices may use internet; app has no paid TTS API or recorded teaching audio"
   ],
   "dist_files": [
     {
@@ -56,14 +64,14 @@
       "sha256": "cbd3d8ff5a28ce7d213b038047b35efed8e94780ab323eacbddbbbddae783ff4"
     },
     {
-      "path": "assets/index-BVGQqlBh.css",
-      "bytes": 15749,
-      "sha256": "ddc95931363f5681610b1c10377acfa73383bfb5ee1aa9705a123cb66ed61207"
+      "path": "assets/index-BeYgTHEZ.css",
+      "bytes": 16143,
+      "sha256": "9ab9e7c4157f4c7e096d31398a2771b72a25b3b1e914add7d53c5f0233350f20"
     },
     {
-      "path": "assets/index-CNJf6at5.js",
-      "bytes": 3118686,
-      "sha256": "d13f548a6a40a20c60da52ee5c20f34a8df8cca4a966b0161970e14d12772cc2"
+      "path": "assets/index-Bx8XBtSR.js",
+      "bytes": 3123539,
+      "sha256": "bc7a77294ddf0df65fdd87b42d77c33fab7fdcc112f8cf7cb015f9411ffdef0b"
     },
     {
       "path": "assets/living_temple_scene.glb",
@@ -78,7 +86,7 @@
     {
       "path": "index.html",
       "bytes": 705,
-      "sha256": "93c05de2585631a9521788c7df308910b6c299df93fb204690b4a5631771b188"
+      "sha256": "767059d791bd15da0ffa8775b95da209834f0a6e018d5b6a7070cae12d339151"
     },
     {
       "path": "realm/infinite-stillness.html",

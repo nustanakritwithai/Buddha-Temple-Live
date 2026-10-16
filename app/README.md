@@ -1,4 +1,4 @@
-# สัปปายะวัด · AI Living Temple v0.6.1
+# สัปปายะวัด · AI Living Temple v0.7.0
 
 Thai-language browser-only courtyard prototype, using the approved higher-detail V0.6 GLB environment. This candidate adds first-person-only view, mobile input hardening, geometry-aligned seating and a compact HUD while preserving the eight GDD areas, cited learning content and rest/practice separation. It connects the user's existing Infinite Stillness prototype through a local sandboxed iframe. No server, authentication, multiplayer or offline world is connected.
 
@@ -114,3 +114,13 @@ CC0 provider URLs, authors, modifications and source hashes are carried under `a
 ## V0.6.1 rotation-input repair
 
 Gesture starts are handled on the app capture path, excluding actual controls/dialogs. Noninteractive right-side minimap/rest surfaces and toolbar/action gaps pass input through, rather than swallowing it before canvas-only listeners. Half selection uses the canvas bounding rectangle rather than assuming full viewport alignment; touch pointers are not filtered by mouse-button rules. Simultaneous left movement/right look keeps independent ownership. Window-level end/cancel clears owners even if capture fails and a finger exits the app. First-person pose is applied through a shared helper tested against Babylon NullEngine render/view matrices. This validates actual camera transforms without claiming a WebGL display or physical Android pass. The exact cause on the reporting user's device remains unconfirmed; confirmed source-level hit-area weaknesses are repaired.
+
+## V0.7 opt-in teaching narration
+
+Station readings and the entrance helper’s ethics/precept branches offer browser speech narration of the visible title, authored introduction and reflection. Nothing plays automatically. Play, pause/resume, stop and next-play volume controls are keyboard-accessible, with visible synthetic-AI-voice labelling and a source link beside the controls. The text remains available throughout. These are modern educational paraphrases, not a monk/teacher imitation, canonical scripture recording or medical/spiritual assessment.
+
+A Thai (`th` or `th-*`) browser voice is required, preferring locally supplied voices. If the browser exposes none, the page explains that reading remains available. Voices may arrive asynchronously. Audio only reports playing after a speech-start callback; failed starts/errors have text fallback. Some system/browser voices may use the network, as disclosed in the UI; this application calls no paid TTS API and adds no credentials, recordings, packages or analytics. Actual Thai voice pronunciation, browser pause/resume support and physical-device behavior remain UNKNOWN. Native speech volume is applied on the next Play action because changing it mid-utterance is not portable.
+
+Repeated Play cancels the old queue, clears a paused browser queue and ignores stale callbacks. Speech stops on reading/branch changes, dialog close/Escape, hidden pages, practice/Realm entry and page exit. A back-forward-cache pagehide stops rather than destroying the reusable controller. Narration suspends and unchecks ambient sound; starting ambient sound stops narration. Nothing resumes automatically after returning from another mode. Realm keeps its existing separate opt-in voice controls. Missing voices never trigger a substitute language or a claim of successful audio.
+
+Baseline source was recovered from deployed GitHub commit `8ea22c7de91d94af8a0bb61392ca427e7a8282f9` under `app/`, with the V0.6.1 main-file hash verified before editing. The first-person camera/input repair and all GLBs remain intact. Validation uses deterministic speech-port mocks and real Babylon NullEngine transform tests; it is not a native browser speech or Android listening test.
