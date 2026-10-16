@@ -1,5 +1,12 @@
 # Changes
 
+## 0.7.1 candidate
+
+- Add manual Thai-voice discovery with three bounded late checks and no autoplay.
+- Distinguish unsupported API, empty/no-Thai voice lists, native errors and start timeout.
+- Show selected voice/zero-volume guidance and describe onstart as an engine report rather than proven audibility.
+- Reporting-device silence remains unconfirmed; no remote release in this task.
+
 ## 0.7.0 candidate
 
 - Add explicit Thai browser-voice narration for visible learning station/helper text, with synthetic-voice label and source links.

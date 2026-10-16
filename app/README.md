@@ -1,4 +1,4 @@
-# สัปปายะวัด · AI Living Temple v0.7.0
+# สัปปายะวัด · AI Living Temple v0.7.1
 
 Thai-language browser-only courtyard prototype, using the approved higher-detail V0.6 GLB environment. This candidate adds first-person-only view, mobile input hardening, geometry-aligned seating and a compact HUD while preserving the eight GDD areas, cited learning content and rest/practice separation. It connects the user's existing Infinite Stillness prototype through a local sandboxed iframe. No server, authentication, multiplayer or offline world is connected.
 
@@ -124,3 +124,11 @@ A Thai (`th` or `th-*`) browser voice is required, preferring locally supplied v
 Repeated Play cancels the old queue, clears a paused browser queue and ignores stale callbacks. Speech stops on reading/branch changes, dialog close/Escape, hidden pages, practice/Realm entry and page exit. A back-forward-cache pagehide stops rather than destroying the reusable controller. Narration suspends and unchecks ambient sound; starting ambient sound stops narration. Nothing resumes automatically after returning from another mode. Realm keeps its existing separate opt-in voice controls. Missing voices never trigger a substitute language or a claim of successful audio.
 
 Baseline source was recovered from deployed GitHub commit `8ea22c7de91d94af8a0bb61392ca427e7a8282f9` under `app/`, with the V0.6.1 main-file hash verified before editing. The first-person camera/input repair and all GLBs remain intact. Validation uses deterministic speech-port mocks and real Babylon NullEngine transform tests; it is not a native browser speech or Android listening test.
+
+## V0.7.1 silent-voice diagnostics candidate
+
+Adds an explicit “check Thai voice again” button. Each user check queries immediately and at 0.3/1/3 seconds, then stops; it never queues speech. Closing/stopping/disposal cancels pending checks. This addresses missing discovery affordances when voices arrive late without `voiceschanged`. The prior version also incidentally refreshed on opening a station or changing volume, so this is not a claim that all late voices were permanently blocked.
+
+Status distinguishes missing speech API, an empty voice list, voices without Thai, native synthesis errors and the 10-second start timeout. A zero-volume warning and the selected Thai voice name aid diagnosis. Native `onstart` now says the system reported starting, with advice to check media volume if inaudible; it does not assert the speaker emitted audible sound. Play remains an immediate user-click action and never falls back to the wrong language. Existing pause/stop/quiet/Realm cancellation and first-person controls remain intact.
+
+The user's reported lack of audible sound is not reproduced on their device. This candidate improves discovery and actionable failure reporting; native Thai voice availability, device audio routing, browser rendering and actual Android audibility remain UNKNOWN. No delay workaround, paid service, external recording or new dependency was added.

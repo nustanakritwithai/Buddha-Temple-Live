@@ -1,27 +1,26 @@
 {
-  "version": "0.7.0",
-  "status": "approved publication artifact; see GitHub Actions for deployment outcome",
+  "version": "0.7.1",
+  "status": "approved publication artifact; see GitHub Actions for deployment outcome; reporting-device audibility unresolved",
   "baseline": {
-    "filename": "buddha-temple-v07-baseline-v061.zip",
-    "sha256": "a24923af62591b15b7e39ebdf7b25ff212a5d4a401077e5ebab0b84bacf1b730",
-    "restored_commit": "8ea22c7de91d94af8a0bb61392ca427e7a8282f9",
-    "restored_path": "app/",
-    "main_sha256_before_edits": "7de96281da5a65fa76341780f8915337dfcbdc6e2ebeb858d536b4f95f02f240"
+    "filename": "buddha-temple-web-v0.7.0-candidate-source-and-dist.zip",
+    "sha256": "cc60c5440bac6fadc0bdb2cfc38f7d8f85d6b775152c40a36788f3806b9dea4a",
+    "production_commit": "7a2a20fb335cc2405bd09c66e093f7739e0869c5"
   },
   "checks": {
     "typescript": "passed",
     "production_build": "passed",
     "repository_tests": {
-      "passed": 62,
+      "passed": 65,
       "failed": 0
     },
     "independent_review_tests": {
-      "passed": 44,
-      "failed": 0
+      "passed": 17,
+      "failed": 0,
+      "scope": "focused narration discovery/lifecycle and input routing regression"
     },
     "browser_runtime": "UNKNOWN - not run",
     "physical_android_ios": "UNKNOWN - not run",
-    "qa_report_sha256": "572df89933951a80a239ca8dea81d7c3562f2a9d6597cb98bb9365103b26f23d"
+    "qa_report_sha256": "4029382fe0920413a0f828409f1e0d384ac62c0e24e1366328fe9b23384e0445"
   },
   "scope": [
     "Seven opt-in physical discovery stations",
@@ -40,7 +39,10 @@
     "Actual Babylon NullEngine render/view-matrix and simultaneous walking/look integration tests",
     "Opt-in Thai browser speech for visible station/helper educational text",
     "Synthetic voice label, visible citation, play/pause/resume/stop and next-play volume",
-    "No autoplay/overlapping queues; lifecycle cancellation and unavailable-voice fallback"
+    "No autoplay/overlapping queues; lifecycle cancellation and unavailable-voice fallback",
+    "Explicit Thai-voice recheck with bounded discovery-only retries",
+    "Distinct unsupported/empty/noThai/error/timeout diagnostics and zero-volume guidance",
+    "Native onstart is labelled as an engine report, not proof of audible output"
   ],
   "known_gaps": [
     "Actual sign readability, mesh picking and mobile UI unverified",
@@ -50,7 +52,8 @@
     "Authored conservative collisions and smooth stair ramp are not a generated navmesh",
     "Exact reporting-device cause and physical Android fix outcome remain unconfirmed",
     "Native Thai voice availability, pronunciation and Android/browser pause behavior not verified",
-    "Browser/system voices may use internet; app has no paid TTS API or recorded teaching audio"
+    "Browser/system voices may use internet; app has no paid TTS API or recorded teaching audio",
+    "Reporting-user silent-audio cause and native audibility remain unresolved"
   ],
   "dist_files": [
     {
@@ -64,14 +67,14 @@
       "sha256": "cbd3d8ff5a28ce7d213b038047b35efed8e94780ab323eacbddbbbddae783ff4"
     },
     {
+      "path": "assets/index-B92R1ATx.js",
+      "bytes": 3126775,
+      "sha256": "6a3df5c4ade0aeb952d4212a5c71c42077d24d97d633cc8e7cdb429f38e87eb0"
+    },
+    {
       "path": "assets/index-BeYgTHEZ.css",
       "bytes": 16143,
       "sha256": "9ab9e7c4157f4c7e096d31398a2771b72a25b3b1e914add7d53c5f0233350f20"
-    },
-    {
-      "path": "assets/index-Bx8XBtSR.js",
-      "bytes": 3123539,
-      "sha256": "bc7a77294ddf0df65fdd87b42d77c33fab7fdcc112f8cf7cb015f9411ffdef0b"
     },
     {
       "path": "assets/living_temple_scene.glb",
@@ -86,7 +89,7 @@
     {
       "path": "index.html",
       "bytes": 705,
-      "sha256": "767059d791bd15da0ffa8775b95da209834f0a6e018d5b6a7070cae12d339151"
+      "sha256": "789417f740801f685f700dac5e942097adbebec1bcc85bb7fb5495de9b17e809"
     },
     {
       "path": "realm/infinite-stillness.html",
